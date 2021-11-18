@@ -26,4 +26,8 @@ deleteCharacter = (id: number):Observable<ICharacter[]> => {
   return this.http.delete<ICharacter[]>(`${environment.URL}/${id}`)
 }
 
+addCharacter = (newChar: ICharacter):Observable<ICharacter> => {
+  return this.http.post<ICharacter>(environment.URL, newChar);
+}
+
 }

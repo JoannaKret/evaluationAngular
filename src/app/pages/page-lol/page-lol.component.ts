@@ -34,4 +34,15 @@ deleteByParent = (id: number): void => {
   )
 }
 
+addCharacterByParent = (newChar: string): void => {
+  let char = {name : newChar, active: true}
+
+  this.lolService.addCharacter(char).subscribe(data =>
+    {
+      this.lolService.getCharacter();
+    },
+    err => console.error(err)
+    )
+}
+
 }
