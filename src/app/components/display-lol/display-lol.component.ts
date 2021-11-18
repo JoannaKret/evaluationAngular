@@ -9,7 +9,8 @@ import { ICharacter } from 'src/app/model/ICharacter';
 export class DisplayLolComponent implements OnInit {
 
   @Input() allCharacters: ICharacter[] = [];
-  @Output() deleteCharacter:EventEmitter<number> = new EventEmitter<number>();
+  @Output() deleteCharacter: EventEmitter<number> = new EventEmitter<number>();
+  @Output() modifyCharacter: EventEmitter<ICharacter> = new EventEmitter<ICharacter>();
   
   constructor() { }
 
@@ -18,6 +19,11 @@ export class DisplayLolComponent implements OnInit {
 
 deleteByChild = (toDelete: number) => {
   this.deleteCharacter.emit(toDelete);
+}
+
+modifyState =(charToModify: ICharacter): void => {
+  charToModify.active == false ? charToModify.active = true : charToModify.active = false;
+  this.modifyCharacter.emit(charToModify);
 }
 
 }

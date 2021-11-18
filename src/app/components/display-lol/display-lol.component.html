@@ -24,7 +24,7 @@
                     <td class="status"><span class="active">{{ character.active }}</span></td>
                     <td>
                         <label class="checkbox-wrap checkbox-primary">
-                              <input type="checkbox">
+                              <input type="checkbox" (click)="modifyState(character)">
                               <span class="checkmark"></span>
                             </label>
                     </td>
@@ -58,7 +58,7 @@
                 <td class="status"><span class="active">{{ character.active }}</span></td>
                 <td>
                     <label class="checkbox-wrap checkbox-primary">
-                          <input type="checkbox">
+                          <input type="checkbox" (click)="modifyState(character)" >
                           <span class="checkmark"></span>
                         </label>
                 </td>

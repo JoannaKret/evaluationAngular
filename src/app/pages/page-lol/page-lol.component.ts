@@ -45,4 +45,12 @@ addCharacterByParent = (newChar: string): void => {
     )
 }
 
+modifyCharacter = (charToModify: ICharacter) => {
+  this.lolService.modifyState(charToModify).subscribe(data => {
+    this.lolService.getCharacter()
+  },
+    err => console.error(err)
+    )
+}
+
 }

@@ -30,4 +30,8 @@ addCharacter = (newChar: ICharacter):Observable<ICharacter> => {
   return this.http.post<ICharacter>(environment.URL, newChar);
 }
 
+modifyState = (charToModify: ICharacter):Observable<ICharacter> => {
+  return this.http.patch<ICharacter>(`${environment.URL}/${charToModify.id}`, charToModify);
+}
+
 }
