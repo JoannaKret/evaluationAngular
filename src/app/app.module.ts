@@ -6,12 +6,14 @@ import { AppComponent } from './app.component';
 import { DisplayLolComponent } from './components/display-lol/display-lol.component';
 import { PageLolComponent } from './pages/page-lol/page-lol.component';
 import { HttpClientModule } from '@angular/common/http';
+import { AddCharComponent } from './layouts/add-char/add-char.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DisplayLolComponent,
-    PageLolComponent
+    PageLolComponent,
+    AddCharComponent
   ],
   imports: [
     BrowserModule,

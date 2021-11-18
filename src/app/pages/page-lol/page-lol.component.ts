@@ -26,5 +26,12 @@ export class PageLolComponent implements OnInit {
     err => console.error(err)
     )
   }
+deleteByParent = (id: number): void => {
+  this.lolService.deleteCharacter(id).subscribe(data => {
+    this.lolService.getCharacter()
+  },
+  err => console.error(err)
+  )
+}
 
 }

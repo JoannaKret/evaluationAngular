@@ -28,7 +28,7 @@
                               <span class="checkmark"></span>
                             </label>
                     </td>
-                    <button type="button" class="btn btn-danger">Remove</button>
+                    <button (click)="deleteByChild(character.id!)" type="button" class="btn btn-danger">Remove</button>
                 </tr>
                 </ng-container>
               </tbody>
@@ -62,7 +62,7 @@
                           <span class="checkmark"></span>
                         </label>
                 </td>
-                <button type="button" class="btn btn-danger">Remove</button>
+                <button (click)="deleteByChild(character.id!)" type="button" class="btn btn-danger">Remove</button>
             </tr>
             </ng-container>
           </tbody>

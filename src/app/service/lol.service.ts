@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { BehaviorSubject } from 'rxjs';
+import { BehaviorSubject, Observable } from 'rxjs';
 import { ICharacter } from '../model/ICharacter';
 import { environment } from 'src/environments/environment';
 
@@ -20,6 +20,10 @@ getCharacter =() => {
       this.charactersStream.next(data);
     }
   )
+}
+
+deleteCharacter = (id: number):Observable<ICharacter[]> => {
+  return this.http.delete<ICharacter[]>(`${environment.URL}/${id}`)
 }
 
 }

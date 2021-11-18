@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { ICharacter } from 'src/app/model/ICharacter';
 
 @Component({
@@ -9,9 +9,15 @@ import { ICharacter } from 'src/app/model/ICharacter';
 export class DisplayLolComponent implements OnInit {
 
   @Input() allCharacters: ICharacter[] = [];
+  @Output() deleteCharacter:EventEmitter<number> = new EventEmitter<number>();
+  
   constructor() { }
 
   ngOnInit(): void {
   }
+
+deleteByChild = (toDelete: number) => {
+  this.deleteCharacter.emit(toDelete);
+}
 
 }
