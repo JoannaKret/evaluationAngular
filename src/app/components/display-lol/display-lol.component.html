@@ -18,13 +18,14 @@
                 <tr class="alert" role="alert" *ngIf="character.active === true">
                     <td class="d-flex align-items-center">
                         <div class="pl-3 email">
-                            <span>{{ character.name }}</span>
+                           {{ character.name }}
                         </div>
                     </td>
                     <td class="status"><span class="active">{{ character.active }}</span></td>
                     <td>
                         <label class="checkbox-wrap checkbox-primary">
                               <input type="checkbox" (click)="modifyState(character)">
+                              Desactivate
                               <span class="checkmark"></span>
                             </label>
                     </td>
@@ -59,6 +60,7 @@
                 <td>
                     <label class="checkbox-wrap checkbox-primary">
                           <input type="checkbox" (click)="modifyState(character)" >
+                          Activate
                           <span class="checkmark"></span>
                         </label>
                 </td>

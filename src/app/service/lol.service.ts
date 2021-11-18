@@ -18,7 +18,7 @@ getCharacter =() => {
   this.http.get<ICharacter[]>(environment.URL).subscribe(
     data => {
       this.charactersStream.next(data);
-    }
+    },
   )
 }
 

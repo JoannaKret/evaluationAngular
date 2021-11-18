@@ -22,6 +22,7 @@ export class PageLolComponent implements OnInit {
   getAllCharacters = (): void => {
     this.lolService.charactersStream.subscribe(data => {
       this.characters = data
+      this.characters.sort((a,b) => a.name > b.name ? 1: -1)
     },
     err => console.error(err)
     )
