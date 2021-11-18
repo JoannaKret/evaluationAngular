@@ -1,0 +1,72 @@
+<div class="row">
+    <div class="col">
+        <div>
+            <h2 class="heading-section text-center jumbotron bg-cover text-white">Active characters</h2>
+        </div>
+        <table class="table table-responsive-xl table-striped table-light">
+            <thead>
+                <tr>
+                    <!-- <th>&nbsp;</th> -->
+                    <th>Name</th>
+                  <th>Status</th>
+                  <th>Modify status</th>
+                  <th>&nbsp;</th>
+                </tr>
+              </thead>
+              <tbody>
+                <ng-container *ngFor="let character of allCharacters; let i = index">
+                <tr class="alert" role="alert" *ngIf="character.active === true">
+                    <td class="d-flex align-items-center">
+                        <div class="pl-3 email">
+                            <span>{{ character.name }}</span>
+                        </div>
+                    </td>
+                    <td class="status"><span class="active">{{ character.active }}</span></td>
+                    <td>
+                        <label class="checkbox-wrap checkbox-primary">
+                              <input type="checkbox">
+                              <span class="checkmark"></span>
+                            </label>
+                    </td>
+                    <button type="button" class="btn btn-danger">Remove</button>
+                </tr>
+                </ng-container>
+              </tbody>
+        </table>
+</div>
+<div class="col">
+    <div >
+        <h2 class="heading-section jumbotron col-xs-6 bg-cover text-white text-center">Inactive characters</h2>
+    </div>
+    <table class="table table-responsive-xl table-striped table-light">
+        <thead>
+            <tr>
+                <!-- <th>&nbsp;</th> -->
+                <th>Name</th>
+              <th>Status</th>
+              <th>Modify status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <ng-container *ngFor="let character of allCharacters; let i = index">
+            <tr class="alert" role="alert" *ngIf="character.active != true">
+                <td class="d-flex align-items-center">
+                    <div class="pl-3 email">
+                        <span>{{ character.name }}</span>
+                    </div>
+                </td>
+                <td class="status"><span class="active">{{ character.active }}</span></td>
+                <td>
+                    <label class="checkbox-wrap checkbox-primary">
+                          <input type="checkbox">
+                          <span class="checkmark"></span>
+                        </label>
+                </td>
+                <button type="button" class="btn btn-danger">Remove</button>
+            </tr>
+            </ng-container>
+          </tbody>
+    </table>
+</div>
+</div>
+

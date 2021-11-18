@@ -1,1 +1,9 @@
-/* You can add global styles to this file, and also import other style files */
+.bg-cover {
+    background-size: cover !important;
+}
+
+.heading-section {
+    background-color: #E1AD01;
+    justify-content: center;
+}
+
